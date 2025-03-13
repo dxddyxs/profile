@@ -1,1 +1,1 @@
-![readme](assets/reamd.png)
+![example](main/assets/reamd.png)
