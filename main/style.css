@@ -1,0 +1,147 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Satoshi' , sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(assets/black-and-white-3840x2160-21293.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 1em;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+#intro-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    pointer-events: none;
+}
+
+.blurred {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+.container {
+    width: 40rem;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 22px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 15px;
+    padding: 35px 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+#img {
+    border-radius: 50%;
+    height: 100px;
+    border: 3px solid rgba(82, 82, 82, 0.493);
+    margin: 10px;
+}
+
+h1 {
+    font-weight: 600px;
+    font-size: 39.5px;
+    filter: drop-shadow(#fff 1px 0 7px);
+}
+
+h3 {
+    font-weight: 300px;
+    font-size: 20px;
+    filter: drop-shadow(#fff 1px 0 7px);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: 30px 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.icon {
+    color: #fff;
+    font-size: 35px;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(#fff 1px 0 7px);
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+p {
+    filter: drop-shadow(#fff 1px 0 7px);
+}
+
+.strawberry {
+    width: calc(100% + 30px); /* Compensa o padding horizontal do container */
+    margin: -35px -15px 0 -15px; /* Margens negativas para cobrir o padding */
+    height: auto;
+    background: url(assets/6122be3c26d57d0567a6cf2f26497da0.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.typing-effect::after {
+    content: "|"; /* cursor */
+    animation: blink 0.7s infinite; /*piscar */
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; } /* apagado */
+    50% { opacity: 1; } /* aceso */
+}
+
+.typing-effect.done::after {
+    content: none;
+    animation: none;
+}
